@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Zagatti - Café na Av. Paulista</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Adicione o logotipo ou nome do café aqui -->
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="position: relative;">
+                <img src="assets/food.jpg" alt="Café na Av. Paulista" style="width: 100%; height: 300px; object-fit: cover;">
+            </div>
+            <div class="swiper-slide" style="position: relative;">
+                <img src="assets/food2.jpg" alt="Café na Av. Paulista" style="width: 100%; height: 300px; object-fit: cover;">
+            </div>
+            <div class="swiper-slide" style="position: relative;">
+                <img src="assets/foodoctopus.jpg" alt="Café na Av. Paulista" style="width: 100%; height: 300px; object-fit: cover;">
+            </div>
+            <!-- Adicione mais imagens conforme necessário -->
+        </div>
+        <div class="hero-text">
+            <h1>Bem-vindo ao Café de Ivan Zagatti</h1>
+            <p>Desfrute de uma experiência gastronômica cosmopolita única na Av. Paulista.</p>
+            <a href="#menu" class="btn">Ver Menu</a>
+        </div>
+        <div class="swiper-pagination custom-pagination"></div>
+    </div>
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Sobre Ivan Zagatti</h2>
+            <p>Ivan Zagatti é um renomado chef de cozinha com 8 anos de experiência em restaurantes de Roterdã. Ele traz para o seu café na Av. Paulista uma culinária cosmopolita com influências de suas experiências em restaurantes michelin.</p>
+            <!-- Adicione imagens do chef ou dos pratos -->
+            <div class="gallery">
+                <img src="assets/ivan.jpg" alt="Ivan Zagatti">
+                <img src="assets/working.jpg" alt="Ivan Zagatti">
+                <img src="assets/ivan2.jpg" alt="Ivan Zagatti">
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Menu</h2>
+            <!-- Lista de pratos -->
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h3>Entradas</h3>
+                    <ul>
+                        <li>Entrada 1
+                            <img src="assets/food2.jpg" alt="">
+                        </li>
+                        <li>Entrada 2
+                            <img src="assets/food.jpg" alt="">
+                        </li>
+                        <!-- Adicione mais entradas conforme necessário -->
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <h3>Pratos Principais</h3>
+                    <ul>
+                        <li>Prato Principal 1
+                            <img src="assets/fish.png" alt="">
+                        </li>
+                        <li>Prato Principal 2
+                            <img src="assets/foodoctopus.jpg" alt="">
+                        </li>
+                        <!-- Adicione mais pratos principais conforme necessário -->
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <h3>Sobremesas</h3>
+                    <ul>
+                        <li>Sobremesa 1
+                            <img src="assets/dessert.jpg" alt="">
+                        </li>
+                        <li>Sobremesa 2
+                            <img src="assets/food3.jpg" alt="">
+                        </li>
+                        <!-- Adicione mais sobremesas conforme necessário -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="uni">
+    <section id="localizacao" class="location">
+        <div class="container">
+            <h2>Localização</h2>
+            <p>O café de Ivan Zagatti está localizado na Av. Paulista, número X. Venha nos fazer uma visita!</p>
+            <!-- Mapa interativo -->
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1329588699386!2d-46.656389724669694!3d-23.563667778798248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c88741c3a7%3A0xd290e3d350a3580f!2sTrianon%20-%20Masp!5e0!3m2!1spt-BR!2sbr!4v1715459733301!5m2!1spt-BR!2sbr" width="320" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Contato/Reservas</h2>
+            <p>Para reservas ou dúvidas, entre em contato conosco através do formulário abaixo:</p>
+            <!-- Formulário de contato -->
+            <form action="#" method="POST">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <!-- Informações de contato adicionais -->
+            <div class="contact-info">
+                <p>Telefone: +55 11 93024-9383</p>
+                <p>E-mail: exemplo@example.com</p>
+            </div>
+        </div>
+    </section>
+</section>
+   
+
+    <section class="instagram-feed">
+        <div class="container">
+            <h2>Siga-nos no Instagram</h2>
+            <!-- Embed do Instagram -->
+            <div class="instagram-embed">
+                <iframe src="https://www.instagram.com/ivanzagatti/embed" style="height: 350px; width: 100%;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ivan Zagatti - Café na Av. Paulista</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="script.js"></script>
+</body>
+</html>

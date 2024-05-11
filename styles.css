@@ -1,0 +1,186 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+img{
+    display: flex;
+    width: 100%;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+ul li img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.hero-text h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.hero-text p {
+    font-size: 16px;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #333;
+    color: #FFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about p,
+.contact p {
+    font-size: 14px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    flex-basis: 100%;
+    margin-bottom: 30px;
+}
+
+.menu-item h3 {
+    text-align: start;
+    margin-left: 20px;
+}
+
+.menu-item ul {
+    padding-left: 20px;
+}
+
+.location h2,
+.contact h2,
+.instagram-feed h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.contact form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact form label,
+.contact-info p {
+    font-size: 14px;
+}
+
+.instagram-feed {
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #333;
+    color: #FFF;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.swiper-pagination.custom-pagination {
+    position: absolute;
+    top: 300px; /* Ajuste conforme necessário */
+}
+
+
+
+/* Media query para tablets e computadores */
+@media only screen and (min-width: 768px) {
+    .gallery {
+        justify-content: center;
+    }
+
+    .gallery img {
+        width: 30%; /* Ajuste conforme necessário */
+        margin: 10px; /* Adicione margem entre as imagens */
+    }
+
+    .location,
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .location,
+    .contact {
+        width: calc(50% - 15px); /* Calcule a largura de duas colunas com uma margem de 15px entre elas */
+        margin-bottom: 30px; /* Adicione margem entre as seções */
+    }
+    
+    .uni{
+        display: flex;
+        flex-direction: row;
+    }
+
+}

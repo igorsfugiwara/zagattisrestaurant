@@ -170,7 +170,7 @@ footer {
 
 .swiper-pagination.custom-pagination {
     position: absolute;
-    top: 300px; /* Ajuste conforme necessário */
+    /* top: 300px; Ajuste conforme necessário */
 }
 
 

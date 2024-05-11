@@ -8,3 +8,9 @@ const swiper = new Swiper('.swiper-container', {
         clickable: true,
     },
 });
+
+
+function toggleMenu() {
+    var menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}

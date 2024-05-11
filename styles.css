@@ -1,6 +1,6 @@
 /* Estilos básicos */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto mono, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -156,6 +156,10 @@ footer {
 
 /* Media query para tablets e computadores */
 @media only screen and (min-width: 768px) {
+    section, nav, .hero-text{
+        width: 80%;
+        margin: 0 auto;
+    }
     .gallery {
         justify-content: center;
     }

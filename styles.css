@@ -190,7 +190,11 @@ footer {
 
 }
 
-
+/* email */
+.contact-form .submit-message {
+    display: none;
+    color: green;
+}
 
 /* Media query para tablets e computadores */
 @media only screen and (min-width: 768px) {

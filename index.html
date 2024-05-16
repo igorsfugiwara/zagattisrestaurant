@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('4dL0a-QFs8e2zrvDS');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(() => {
+                        alert('Email enviado com sucesso!');
+                    }, (error) => {
+                        alert('Ocorreu um erro ao enviar o email: ' + JSON.stringify(error));
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -17,7 +36,14 @@
                 <li><a href="#cardapio">Menu</a></li>
                 <li><a href="#localizacao">Localização</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="#instagram-feed">Instagram </a></li>
+                <li><a href="#instagram-feed">Instagram</a></li>
+            </ul>
+            <ul class="menu-web">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cardapio">Menu</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#instagram-feed">Instagram</a></li>
             </ul>
         </nav>
     </header>
@@ -32,24 +58,32 @@
             <div class="swiper-slide" style="position: relative;">
                 <img src="assets/foodoctopus.jpg" alt="Café na Av. Paulista" style="width: 100%; height: 300px; object-fit: cover;">
             </div>
-            <!-- Adicione mais imagens conforme necessário -->
         </div>
         <div class="hero-text">
             <h1>Bem-vindo ao Café de Ivan Zagatti</h1>
             <p>Desfrute de uma experiência gastronômica cosmopolita única na Av. Paulista.</p>
             <a href="#cardapio" class="btn">Ver cardapio</a>
         </div>
-        <!-- <div class="swiper-pagination custom-pagination"></div> -->
     </div>
     <section id="sobre" class="about">
         <div class="container">
             <h2>Sobre Ivan Zagatti</h2>
-            <p>Ivan Zagatti é um renomado chef de cozinha com 8 anos de experiência em restaurantes de Roterdã. Ele traz para o seu café na Av. Paulista uma culinária cosmopolita com influências de suas experiências em restaurantes michelin.</p>
-            <!-- Adicione imagens do chef ou dos pratos -->
-            <div class="gallery">
-                <img src="assets/ivan.jpg" alt="Ivan Zagatti">
-                <img src="assets/working.jpg" alt="Ivan Zagatti">
-                <img src="assets/ivan2.jpg" alt="Ivan Zagatti">
+            <div class="container-about container">
+                <p>Ivan Zagatti é um renomado chef de cozinha com 8 anos de experiência em restaurantes de Roterdã. Ele traz para o seu café na Av. Paulista uma culinária cosmopolita com influências de suas experiências em restaurantes michelin.</p>
+                <!-- Adicione imagens do chef ou dos pratos -->
+                <div class="gallery swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/ivan.jpg" alt="Ivan Zagatti">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/working.jpg" alt="Ivan Zagatti">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/ivan2.jpg" alt="Ivan Zagatti">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -57,7 +91,6 @@
     <section id="cardapio" class="cardapio">
         <div class="container">
             <h2>Menu</h2>
-            <!-- Lista de pratos -->
             <div class="menu-items">
                 <div class="menu-item">
                     <h3>Entradas</h3>
@@ -68,7 +101,6 @@
                         <li>Entrada 2
                             <img src="assets/food.jpg" alt="">
                         </li>
-                        <!-- Adicione mais entradas conforme necessário -->
                     </ul>
                 </div>
                 <div class="menu-item">
@@ -80,7 +112,6 @@
                         <li>Prato Principal 2
                             <img src="assets/foodoctopus.jpg" alt="">
                         </li>
-                        <!-- Adicione mais pratos principais conforme necessário -->
                     </ul>
                 </div>
                 <div class="menu-item">
@@ -92,52 +123,46 @@
                         <li>Sobremesa 2
                             <img src="assets/food3.png" alt="">
                         </li>
-                        <!-- Adicione mais sobremesas conforme necessário -->
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-<section class="uni">
-    <section id="localizacao" class="location">
-        <div class="container">
-            <h2>Localização</h2>
-            <p>O café de Ivan Zagatti está localizado na Av. Paulista, número X. Venha nos fazer uma visita!</p>
-            <!-- Mapa interativo -->
-            <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1329588699386!2d-46.656389724669694!3d-23.563667778798248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c88741c3a7%3A0xd290e3d350a3580f!2sTrianon%20-%20Masp!5e0!3m2!1spt-BR!2sbr!4v1715459733301!5m2!1spt-BR!2sbr" width="320" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section class="uni">
+        <section id="localizacao" class="location">
+            <div class="container">
+                <h2>Localização</h2>
+                <p>O café de Ivan Zagatti está localizado na Av. Paulista, número X. Venha nos fazer uma visita!</p>
+                <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1329588699386!2d-46.656389724669694!3d-23.563667778798248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c88741c3a7%3A0xd290e3d350a3580f!2sTrianon%20-%20Masp!5e0!3m2!1spt-BR!2sbr!4v1715459733301!5m2!1spt-BR!2sbr" width="320" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2>Contato/Reservas</h2>
-            <p>Para reservas ou dúvidas, entre em contato conosco através do formulário abaixo:</p>
-            <!-- Formulário de contato -->
-            <form id="contact-form">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            <!-- Informações de contato adicionais -->
-            <div class="contact-info">
-                <p>Telefone: +55 11 93024-9383</p>
-                <p>E-mail: exemplo@example.com</p>
+        <section id="contato" class="contact">
+            <div class="container">
+                <h2>Contato/Reservas</h2>
+                <p>Para reservas ou dúvidas, entre em contato conosco através do formulário abaixo:</p>
+                <form id="contact-form">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="user_name" required>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="user_email" required>
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="contact-info">
+                    <p>Telefone: +55 11 93024-9383</p>
+                    <p>E-mail: exemplo@example.com</p>
+                </div>
             </div>
-        </div>
+        </section>
     </section>
-</section>
-   
 
     <section class="instagram-feed" id="instagram-feed">
         <div class="container">
             <h2>Siga-nos no Instagram</h2>
-            <!-- Embed do Instagram -->
             <div class="instagram-embed">
                 <iframe src="https://www.instagram.com/ivanzagatti/embed" style="height: 400px; width: 100%;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
             </div>
@@ -151,5 +176,10 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
     <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

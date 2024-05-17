@@ -23,8 +23,7 @@ const swiperGallery = new Swiper('.gallery.swiper-container', {
 
 
 function toggleMenu() {
-    var menu = document.querySelector('.menu');
-    menu.classList.toggle('active');
+    document.querySelector('.menu').classList.toggle('active');
 }
 
 // EMAIL

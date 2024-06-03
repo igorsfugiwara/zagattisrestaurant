@@ -229,6 +229,12 @@ header {
     z-index: 999;
 }
 
+.menu-toggle.fixed {
+    position: fixed;
+    top: 0;
+    left: 10px;
+}
+
 .menu.active {
     left: 0;
 }
@@ -327,10 +333,11 @@ footer {
     text-decoration: underline;
 }
 
-.carousel-item{
+.carousel-item {
     height: 213px;
 }
-.carousel-item img{
+
+.carousel-item img {
     height: 100%;
     object-fit: cover;
 }
@@ -338,24 +345,27 @@ footer {
 iframe {
     width: 100%;
 }
+
 /* Media query para tablets e computadores */
 @media only screen and (min-width: 768px) {
-    .carousel-item{
+    .carousel-item {
         height: 350px;
         text-align: center;
     }
-    .carousel-item img{
+
+    .carousel-item img {
         object-fit: cover;
         text-align: center;
     }
-    
-    
+
+
     section,
     nav,
     .hero-text {
         width: 80%;
         margin: 0 auto;
     }
+
     .hero-text {
         margin-top: 2em;
     }

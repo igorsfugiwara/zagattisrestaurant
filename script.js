@@ -55,15 +55,15 @@ function adjustMenuPosition() {
 // Verifica a posição do menu ao rolar a tela
 window.addEventListener('scroll', adjustMenuPosition);
 // EMAIL
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     emailjs.init('4dL0a-QFs8e2zrvDS'); // Substitua 'YOUR_USER_ID' pelo seu User ID do EmailJS
 
     emailjs.sendForm('service_yky4tkg', 'template_cmkmklm', this)
-        .then(function() {
+        .then(function () {
             alert('Email enviado com sucesso!');
-        }, function(error) {
+        }, function (error) {
             alert('Ocorreu um erro ao enviar o email: ' + JSON.stringify(error));
         });
 });

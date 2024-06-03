@@ -7,6 +7,8 @@ const swiper = new Swiper('.swiper-container', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    slidesPerView: 1, // Mostrar apenas uma imagem por vez
+    spaceBetween: 0 // Espaço entre as imagens
 });
 
 const swiperGallery = new Swiper('.gallery.swiper-container', {
@@ -18,8 +20,9 @@ const swiperGallery = new Swiper('.gallery.swiper-container', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    slidesPerView: 1, // Mostrar apenas uma imagem por vez
+    spaceBetween: 0 // Espaço entre as imagens
 });
-
 
 
 function toggleMenu() {

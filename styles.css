@@ -196,8 +196,8 @@ footer {
     font-size: 24px;
     cursor: pointer;
     position: absolute;
-    top: 15px;
-    left: 25px;
+    top: -9px;
+    left: -11px;
     z-index: 1000;
     color: white;
 }
@@ -327,14 +327,37 @@ footer {
     text-decoration: underline;
 }
 
+.carousel-item{
+    height: 213px;
+}
+.carousel-item img{
+    height: 100%;
+    object-fit: cover;
+}
+
+iframe {
+    width: 100%;
+}
 /* Media query para tablets e computadores */
 @media only screen and (min-width: 768px) {
-
+    .carousel-item{
+        height: 350px;
+        text-align: center;
+    }
+    .carousel-item img{
+        object-fit: cover;
+        text-align: center;
+    }
+    
+    
     section,
     nav,
     .hero-text {
         width: 80%;
         margin: 0 auto;
+    }
+    .hero-text {
+        margin-top: 2em;
     }
 
     .gallery {
@@ -354,7 +377,7 @@ footer {
         border-radius: 12px;
     }
 
-    .gallery.swiper-container {
+    #carouselIvan {
         display: none;
     }
 

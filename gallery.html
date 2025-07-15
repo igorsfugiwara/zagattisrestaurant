@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Del Mastro - Galeria de Fotos</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.jpg">
+</head>
+<body>
+      <!-- HEADER -->
+      <header>
+        <nav class="navbar">
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul class="menu">
+                <li class="logo-menu"><a href="index.html"><img src="./assets/logo_wbg.png" alt=""></a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#cardapio">Menu</a></li>
+                <li><a href="index.html#fotos">Fotos</a></li>
+                <li><a href="index.html#press">Aparições na mídia</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+                <li><a href="index.html#localizacao">Localização</a></li>
+            </ul>
+            <ul class="menu-web">
+                <li class="logo-menu"><a href="#home"><img src="./assets/logo_wbg.png" alt=""></a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#cardapio">Menu</a></li>
+                <li><a href="index.html#fotos">Fotos</a></li>
+                <li><a href="index.html#press">Aparições na mídia</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+                <li><a href="index.html#localizacao">Localização</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- MAIN -->
+    <div class="main">
+      <h1>Galeria de Fotos</h1>
+      <div class="gallery">
+          <img src="./assets/del mastro fotos/ancho1.jpeg" alt="Image 1">
+          <img src="./assets/del mastro fotos/bisteca.jpeg" alt="Image 2">
+          <img src="./assets/del mastro fotos/berinjela.jpeg" alt="Image 3">
+          <img src="./assets/del mastro fotos/risoto-limao.jpeg" alt="Image 4">
+          <img src="./assets/del mastro fotos/pesto-ricota.jpeg" alt="Image 1">
+          <img src="./assets/del mastro fotos/caprese.jpeg" alt="Image 2">
+          <img src="./assets/del mastro fotos/RISOTO CAMARÃO.jpeg" alt="Image 3">
+          <img src="./assets/del mastro fotos/rigatoni-carbonara.jpeg" alt="Image 4">
+          <img src="./assets/del mastro fotos/dois-molhos.jpeg" alt="Image 1">
+          <img src="./assets/del mastro fotos/fettuccine.jpeg" alt="Image 2">
+          <img src="./assets/del mastro fotos/file2.jpeg" alt="Image 3">
+          <img src="./assets/del mastro fotos/risoto-funghi.jpeg" alt="Image 4">
+          <img src="./assets/del mastro fotos/grego.jpeg" alt="Image 1">
+          <img src="./assets/del mastro fotos/milanesa.jpeg" alt="Image 2">
+          <img src="./assets/del mastro fotos/pesto-saint-peter.jpeg" alt="Image 3">
+          <img src="./assets/del mastro fotos/parmegiana.jpeg" alt="Image 4">
+        </div>
+        
+        <div class="modal" id="imageModal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modalImg">
+          <div class="controls">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+          </div>
+        </div>
+    </div>
+
+       <!-- FOOTER -->
+       <footer>
+        <div class="footer">
+            <p>&copy; 2025 Igor Lorem Ipsum - Todos os direitos reservados.</p>
+            <div class="social">
+                <a href="https://www.instagram.com/delmastro_restaurante/"><img src="./assets/icons/instagram.png" alt=""></a>
+                <a href="https://wa.me/+551132622020/"><img src="./assets/icons/whatsapp.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=61570244576689"><img src="./assets/icons/facebook.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+      <script>
+        // Gallery
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.gallery img');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+  
+    let currentIndex = 0;
+  
+    function openModal(index) {
+        console.log("Abrindo modal para imagem:", index);
+      modal.style.display = 'flex';
+      modalImg.src = images[index].src;
+      currentIndex = index;
+    }
+  
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+  
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].src;
+    }
+  
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].src;
+    }
+  
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => openModal(index));
+    });
+  
+    closeBtn.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+  
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  
+    document.addEventListener('keydown', (e) => {
+      if (modal.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'Escape') closeModal();
+      }
+    });
+    console.log("Script carregado!");
+  });
+  
+      </script>
+
+</body>
+</html>

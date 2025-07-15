@@ -1,29 +1,3 @@
-const swiper = new Swiper('.swiper-container', {
-    loop: true,
-    autoplay: {
-        delay: 3000, // 3 segundos
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    slidesPerView: 1, // Mostrar apenas uma imagem por vez
-    spaceBetween: 0 // Espaço entre as imagens
-});
-
-const swiperGallery = new Swiper('.gallery.swiper-container', {
-    loop: true,
-    autoplay: {
-        delay: 3000, // 3 segundos
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    slidesPerView: 1, // Mostrar apenas uma imagem por vez
-    spaceBetween: 0 // Espaço entre as imagens
-});
-
 // MENU
 function toggleMenu() {
     const menu = document.querySelector('.menu');
@@ -51,6 +25,27 @@ function adjustMenuPosition() {
         menuToggle.classList.remove('fixed');
     }
 }
+
+// Fecha o menu ao clicar fora ou em um item
+document.addEventListener('click', function (event) {
+    const menu = document.querySelector('.menu');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    // Verifica se o menu está ativo
+    if (menu.classList.contains('active')) {
+        // Se o clique foi fora do menu e fora do botão toggle, fecha o menu
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove('active');
+            menuToggle.classList.remove('fixed');
+        }
+
+        // Se o clique foi em uma opção do menu, também fecha
+        if (event.target.closest('.menu a')) {
+            menu.classList.remove('active');
+            menuToggle.classList.remove('fixed');
+        }
+    }
+});
 
 // Verifica a posição do menu ao rolar a tela
 window.addEventListener('scroll', adjustMenuPosition);

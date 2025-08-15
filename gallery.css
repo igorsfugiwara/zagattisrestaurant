@@ -86,3 +86,10 @@ h1 {
     cursor: pointer;
     user-select: none;
 }
+
+.gallery video {
+    width: fit-content;
+    height: 95vh;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}

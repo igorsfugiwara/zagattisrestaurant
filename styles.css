@@ -7,12 +7,12 @@ body {
     flex-direction: column;
     background-color: #333!important;
     letter-spacing: 1px;
-    font-weight: 100;
+    font-weight: 300;
     color: #fff;
 }
 
 #contato a {
-    color: #00ceff;
+    color: #dd5c33;
 }
 
 #sobre,
@@ -33,9 +33,9 @@ body {
 #fotos span,
 #press span,
 #contato span {
-    background-color: #333;
+    background-color: #faf0d7;
     font-size: 20px;
-    color: white;
+    color: #452218;
     padding: 2em;
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@ section img {
 
 /* NavBar */
 header {
-    background-color: #333;
+    background-color: #faf0d7;
     padding: 10px 20px;
     height: fit-content;
     border-bottom: 1px solid #ddd;
@@ -68,7 +68,7 @@ header {
 }
 
 .navbar .logo-menu img {
-    height: 40px;
+    height: 90px;
 }
 
 nav ul {
@@ -83,13 +83,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #FFF;
+    color: #452218;
     text-decoration: none;
     font-size: 22px;
 }
 
 nav ul li a:hover, a:hover {
-    color: #eee !important;
+    color: #dd5c33 !important;
     text-decoration: none;
     text-shadow: #fff 1px 0 10px;
 }
@@ -110,7 +110,7 @@ li {
 .menu-web {
     display: flex;
     cursor: pointer;
-    color: white;
+    color: #452218;
     gap: 3rem;
     height: 100%;
     align-items: center;
@@ -122,7 +122,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 100;
+    font-weight: 300;
 
 }
 
@@ -158,14 +158,14 @@ li {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #000000a6;
+    background-color: #ffffffa6;
     width: 100%;
     height: 100vh;
 }
 
 h2 {
     margin-top: 1em;
-    font-weight: 100; 
+    font-weight: 300; 
 }
 
 /* menu - nav */
@@ -195,7 +195,7 @@ h2 {
     top: -9px;
     left: -11px;
     z-index: 1000;
-    color: white;
+    color: #452218;
 }
 
 .menu {
@@ -207,14 +207,14 @@ h2 {
     right: -100%;
     width: 250px;
     height: fit-content;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: right 0.3s ease;
     z-index: 4;
-    width: 80%;
+    width: 100%;
     height: 80%;
 }
 
@@ -234,7 +234,7 @@ h2 {
 
 .menu li a {
     text-decoration: none;
-    color: #fff;
+    color: #452218;
     font-size: 24px;
 }
 
@@ -267,8 +267,8 @@ span a.button {
     border: none ;
     font-weight: 700;
     letter-spacing: 3px;
-    background-color: #ddd;
-    color: #333 !important;
+    background-color: #dd5c33;
+    color: #452218 !important;
 }
 
 /* email */
@@ -283,8 +283,8 @@ footer {
 
 /* footer */
 footer {
-    background-color: #333;
-    color: #FFF;
+    background-color: #faf0d7;
+    color: #452218;
     text-align: center;
     padding: 30px 0;
     font-size: 14px;
@@ -311,7 +311,7 @@ footer {
     gap: 2em;
 }
 .social a img {
-    filter: invert(100%);
+    filter: invert(14%) sepia(20%) saturate(900%) hue-rotate(350deg) brightness(90%) contrast(85%);
     height: 24px;
 }
 
@@ -372,7 +372,7 @@ footer {
         justify-content: space-evenly;
         gap: 3rem;
         cursor: pointer;
-        color: white;
+        color: #452218;
     }
 
     span div {

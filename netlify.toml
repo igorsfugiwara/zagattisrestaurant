@@ -1,14 +1,10 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
 
-# Netlify auto-detects Next.js and applies the Essential Next.js runtime.
-# The plugin handles SSR, image optimization, and routing automatically.
-
-# Security headers for all routes
 [[headers]]
   for = "/*"
   [headers.values]
@@ -18,7 +14,6 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# Long-term cache for static assets
 [[headers]]
   for = "/fotos/*"
   [headers.values]

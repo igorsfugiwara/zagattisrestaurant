@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(cp \"/home/user/github/zagattisrestaurant/assets/video.mp4\" /home/user/github/zagattisrestaurant/public/video.mp4 && cp /home/user/github/zagattisrestaurant/assets/logo.jpg /home/user/github/zagattisrestaurant/public/logo.jpg && cp /home/user/github/zagattisrestaurant/assets/logo_wbg.png /home/user/github/zagattisrestaurant/public/logo_wbg.png && cp \"/home/user/github/zagattisrestaurant/assets/del mastro fotos/\"*.jpeg /home/user/github/zagattisrestaurant/public/fotos/ && echo \"Assets copied\")",
+      "Bash(npm install *)",
+      "Bash(npm run *)"
+    ],
+    "additionalDirectories": [
+      "/home/user/github/zagattisrestaurant/assets/del mastro fotos"
+    ]
+  }
+}

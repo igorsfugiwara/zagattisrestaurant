@@ -1,0 +1,214 @@
+.page {
+  min-height: 100vh;
+  background: var(--dark);
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+
+.header {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  border-bottom: 1px solid var(--card-border);
+
+  @media (min-width: 768px) {
+    padding: 0 3rem 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 5rem 4rem;
+  }
+}
+
+.sectionLabel {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.875rem;
+}
+
+.pageTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.1;
+}
+
+.goldLine {
+  width: 3.5rem;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.5rem 0;
+}
+
+.subtitle {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1rem;
+  color: rgba(245, 240, 232, 0.55);
+  max-width: 36rem;
+  line-height: 1.7;
+}
+
+.body {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 0 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 5rem;
+  }
+}
+
+/* ─── Category ─── */
+.category {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--card-border);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.categoryTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 400;
+  color: var(--cream);
+}
+
+.categorySubtitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ─── Items grid ─── */
+.itemsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.itemCard {
+  background: var(--dark-2);
+  border: 1px solid var(--card-border);
+  padding: 1.75rem;
+  transition: border-color 0.2s ease;
+  position: relative;
+
+  &:hover {
+    border-color: rgba(201, 169, 110, 0.4);
+  }
+}
+
+.itemCardDestaque {
+  border-color: rgba(201, 169, 110, 0.3);
+}
+
+.destaqueBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201, 169, 110, 0.5);
+  padding: 0.2rem 0.5rem;
+}
+
+.itemNome {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.25rem;
+  padding-right: 3rem;
+}
+
+.itemNomeItaliano {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgba(201, 169, 110, 0.7);
+  margin-bottom: 0.875rem;
+}
+
+.itemDesc {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(245, 240, 232, 0.5);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.itemPreco {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ─── CTA ─── */
+.ctaSection {
+  max-width: 72rem;
+  margin: 4rem auto 0;
+  padding: 0 1.5rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 0 3rem;
+  }
+}
+
+.ctaText {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-style: italic;
+  color: rgba(245, 240, 232, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: #0a0a0a;
+  padding: 0.875rem 2.25rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: var(--gold-light);
+  }
+}

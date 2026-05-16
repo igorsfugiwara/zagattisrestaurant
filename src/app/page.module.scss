@@ -1,0 +1,441 @@
+/* ─── HERO ─────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.55) 0%,
+    rgba(10, 10, 10, 0.35) 50%,
+    rgba(10, 10, 10, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.heroLogo {
+  width: clamp(140px, 25vw, 220px);
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.heroTagline {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.125rem, 2.5vw, 1.75rem);
+  color: rgba(245, 240, 232, 0.9);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-block;
+  background: var(--gold);
+  color: #0a0a0a;
+  padding: 0.875rem 2.25rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+}
+
+.btnSecondary {
+  display: inline-block;
+  border: 1px solid rgba(245, 240, 232, 0.45);
+  color: var(--cream);
+  padding: 0.875rem 2.25rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.5;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 2.5rem;
+  background: var(--cream);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ─── SHARED SECTION STYLES ───────────────────────────── */
+.sectionLabel {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.875rem;
+}
+
+.goldLine {
+  width: 3.5rem;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.25rem 0 1.75rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.15;
+}
+
+.sectionText {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1rem;
+  color: rgba(245, 240, 232, 0.65);
+  line-height: 1.85;
+
+  @media (min-width: 768px) {
+    font-size: 1.0625rem;
+  }
+}
+
+/* ─── SOBRE ────────────────────────────────────────────── */
+.sobre {
+  background: var(--dark-2);
+  padding: 5rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 7rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 8rem 5rem;
+  }
+}
+
+.sobreGrid {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+.sobreImageWrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+
+  img {
+    transition: transform 0.7s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+/* ─── MENU PREVIEW ─────────────────────────────────────── */
+.menuPreview {
+  background: var(--dark);
+  padding: 5rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 7rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 8rem 5rem;
+  }
+}
+
+.menuGrid {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+    gap: 5rem;
+
+    > * {
+      direction: ltr;
+    }
+  }
+}
+
+.menuImageWrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+
+  img {
+    transition: transform 0.7s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.menuContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.goldLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 2rem;
+  transition: gap 0.2s ease;
+
+  &:hover {
+    gap: 0.75rem;
+  }
+}
+
+/* ─── GALLERY PREVIEW ──────────────────────────────────── */
+.galleryPreview {
+  background: var(--dark-2);
+  padding: 5rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 7rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 8rem 5rem;
+  }
+}
+
+.galleryHeader {
+  max-width: 72rem;
+  margin: 0 auto 3rem;
+}
+
+.galleryGrid {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+
+  img {
+    transition: transform 0.6s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
+.galleryFooter {
+  max-width: 72rem;
+  margin: 2.5rem auto 0;
+}
+
+/* ─── CONTATO ──────────────────────────────────────────── */
+.contato {
+  background: var(--dark);
+  padding: 5rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 7rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 8rem 5rem;
+  }
+}
+
+.contatoGrid {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+}
+
+.contatoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contatoItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.contatoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contatoIcon {
+  flex-shrink: 0;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.contatoLabel {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+
+.contatoValue {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: rgba(245, 240, 232, 0.7);
+  line-height: 1.6;
+  transition: color 0.2s ease;
+
+  &:is(a):hover {
+    color: var(--cream);
+  }
+}
+
+.horario {
+  background: var(--dark-3);
+  border: 1px solid var(--card-border);
+  padding: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.horarioTitle {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.horarioLine {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(245, 240, 232, 0.6);
+  line-height: 1.8;
+}
+
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+
+  @media (min-width: 1024px) {
+    aspect-ratio: unset;
+    height: 100%;
+    min-height: 420px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+}

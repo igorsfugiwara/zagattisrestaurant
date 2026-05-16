@@ -2,10 +2,34 @@ import type { Metadata } from 'next'
 import { midiaItems } from '@/data/midia'
 import styles from './page.module.scss'
 
+const BASE_URL = 'https://delmastrosp.netlify.app'
+
 export const metadata: Metadata = {
-  title: 'Del Mastro | Mídia',
+  title: 'Mídia',
   description:
-    'Del Mastro na mídia: aparições em publicações e guias gastronômicos. Reconhecimentos que celebram nossa cozinha italiana artesanal.',
+    'Del Mastro na mídia: aparições no Estadão, Veja São Paulo e indicação Bib Gourmand do Guia Michelin. Reconhecimentos que celebram nossa cozinha italiana artesanal.',
+  alternates: {
+    canonical: `${BASE_URL}/midia`,
+  },
+  openGraph: {
+    title: 'Del Mastro | Mídia',
+    description: 'Aparições na mídia e reconhecimentos do Del Mastro, restaurante italiano na Av. Paulista.',
+    url: `${BASE_URL}/midia`,
+    images: [
+      {
+        url: `${BASE_URL}/fotos/fettuccine.jpeg`,
+        width: 1200,
+        height: 800,
+        alt: 'Del Mastro — Restaurante Italiano',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Del Mastro | Mídia',
+    description: 'Aparições na mídia e reconhecimentos do Del Mastro.',
+    images: [`${BASE_URL}/fotos/fettuccine.jpeg`],
+  },
 }
 
 const badgeIcons: Record<string, string> = {

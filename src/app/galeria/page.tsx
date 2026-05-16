@@ -1,12 +1,33 @@
 import type { Metadata } from 'next'
 import GalleryClient from '@/components/GalleryClient'
 
+const BASE_URL = 'https://delmastrosp.netlify.app'
+
 export const metadata: Metadata = {
-  title: 'Del Mastro | Galeria',
+  title: 'Galeria',
   description:
-    'Galeria de fotos do Del Mastro: pratos artesanais, risotos e massas frescas preparadas com ingredientes selecionados.',
+    'Galeria de fotos do Del Mastro: massas frescas, risotos cremosos, pratos artesanais e o ambiente aconchegante do restaurante na Av. Paulista.',
+  alternates: {
+    canonical: `${BASE_URL}/galeria`,
+  },
   openGraph: {
-    images: [{ url: '/fotos/fettuccine.jpeg' }],
+    title: 'Del Mastro | Galeria',
+    description: 'Cada prato é uma obra. Conheça a galeria do Del Mastro.',
+    url: `${BASE_URL}/galeria`,
+    images: [
+      {
+        url: `${BASE_URL}/fotos/parmegiana.jpeg`,
+        width: 1200,
+        height: 800,
+        alt: 'Frango à Parmegiana — Del Mastro',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Del Mastro | Galeria',
+    description: 'Cada prato é uma obra. Conheça a galeria do Del Mastro.',
+    images: [`${BASE_URL}/fotos/parmegiana.jpeg`],
   },
 }
 

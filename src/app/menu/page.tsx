@@ -2,10 +2,34 @@ import type { Metadata } from 'next'
 import { menuItems } from '@/data/menu'
 import styles from './page.module.scss'
 
+const BASE_URL = 'https://delmastrosp.netlify.app'
+
 export const metadata: Metadata = {
-  title: 'Del Mastro | Cardápio',
+  title: 'Cardápio',
   description:
-    'Conheça o cardápio do Del Mastro: massas frescas artesanais, risotos cremosos e executivos do dia. Av. Paulista, São Paulo.',
+    'Cardápio completo do Del Mastro: massas frescas artesanais, risotos cremosos, executivos do dia e bebidas. Ingredientes selecionados, preparo artesanal.',
+  alternates: {
+    canonical: `${BASE_URL}/menu`,
+  },
+  openGraph: {
+    title: 'Del Mastro | Cardápio',
+    description: 'Massas frescas, risotos e executivos preparados com ingredientes selecionados.',
+    url: `${BASE_URL}/menu`,
+    images: [
+      {
+        url: `${BASE_URL}/fotos/risoto-funghi.jpeg`,
+        width: 1200,
+        height: 800,
+        alt: 'Risoto de Funghi — Del Mastro',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Del Mastro | Cardápio',
+    description: 'Massas frescas, risotos e executivos preparados com ingredientes selecionados.',
+    images: [`${BASE_URL}/fotos/risoto-funghi.jpeg`],
+  },
 }
 
 export default function MenuPage() {

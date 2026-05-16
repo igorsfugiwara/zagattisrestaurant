@@ -1,17 +1,73 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import JsonLd from '@/components/JsonLd'
 import styles from './page.module.scss'
 
+const BASE_URL = 'https://delmastrosp.netlify.app'
+
 export const metadata: Metadata = {
-  title: 'Del Mastro | Restaurante Italiano na Av. Paulista',
+  alternates: {
+    canonical: BASE_URL,
+  },
+  openGraph: {
+    url: BASE_URL,
+  },
+}
+
+const restaurantSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  '@id': `${BASE_URL}/#restaurant`,
+  name: 'Del Mastro',
   description:
-    'Del Mastro — restaurante italiano no coração da Av. Paulista. Massas frescas artesanais, risotos e executivos preparados com carinho. São Paulo, SP.',
+    'Restaurante italiano no coração da Av. Paulista. Massas frescas artesanais, risotos cremosos e executivos preparados com carinho.',
+  url: BASE_URL,
+  telephone: '+55-11-3262-2020',
+  email: 'delmastro.info@gmail.com',
+  servesCuisine: ['Italian', 'Mediterranean'],
+  priceRange: '$$',
+  currenciesAccepted: 'BRL',
+  paymentAccepted: 'Cash, Credit Card',
+  image: `${BASE_URL}/fotos/fettuccine.jpeg`,
+  logo: `${BASE_URL}/logo_wbg.png`,
+  hasMenu: `${BASE_URL}/menu`,
+  acceptsReservations: 'True',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Av. Paulista, 1159, Loja 2',
+    addressLocality: 'São Paulo',
+    addressRegion: 'SP',
+    postalCode: '01311-200',
+    addressCountry: 'BR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -23.5646,
+    longitude: -46.6527,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '15:30',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '12:30',
+      closes: '16:00',
+    },
+  ],
+  sameAs: ['https://www.instagram.com/delmastro_restaurante'],
 }
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={restaurantSchema} />
+
       {/* ── HERO ── */}
       <section className={styles.hero}>
         <video
@@ -62,7 +118,7 @@ export default function HomePage() {
         <div className={styles.sobreGrid}>
           <div>
             <span className={styles.sectionLabel}>Nossa história</span>
-            <h2 className={styles.sectionTitle}>Um refúgio<br />gastronômico</h2>
+            <h1 className={styles.sectionTitle}>Um refúgio<br />gastronômico</h1>
             <div className={styles.goldLine} />
             <p className={styles.sectionText}>
               Bem-vindo ao Del Mastro, seu refúgio gastronômico no coração da Av. Paulista.
@@ -73,7 +129,7 @@ export default function HomePage() {
           <div className={styles.sobreImageWrapper}>
             <Image
               src="/fotos/ancho1.jpeg"
-              alt="Ambiente Del Mastro"
+              alt="Prato do Del Mastro — Ancho grelhado"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: 'cover' }}
@@ -88,7 +144,7 @@ export default function HomePage() {
           <div className={styles.menuImageWrapper}>
             <Image
               src="/fotos/fettuccine.jpeg"
-              alt="Fettuccine Del Mastro"
+              alt="Fettuccine artesanal Del Mastro"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: 'cover' }}
@@ -122,9 +178,9 @@ export default function HomePage() {
         </div>
         <div className={styles.galleryGrid}>
           {[
-            { src: '/fotos/parmegiana.jpeg', alt: 'Parmegiana' },
-            { src: '/fotos/risoto-funghi.jpeg', alt: 'Risoto de Funghi' },
-            { src: '/fotos/fettuccine.jpeg', alt: 'Fettuccine' },
+            { src: '/fotos/parmegiana.jpeg', alt: 'Frango à Parmegiana — Del Mastro' },
+            { src: '/fotos/risoto-funghi.jpeg', alt: 'Risoto de Funghi — Del Mastro' },
+            { src: '/fotos/fettuccine.jpeg', alt: 'Fettuccine artesanal — Del Mastro' },
           ].map((photo) => (
             <div key={photo.src} className={styles.galleryItem}>
               <Image
@@ -167,7 +223,9 @@ export default function HomePage() {
                 </span>
                 <div>
                   <p className={styles.contatoLabel}>Endereço</p>
-                  <p className={styles.contatoValue}>Av. Paulista, 1159 – Loja 2<br />São Paulo – SP, 01311-200</p>
+                  <address className={styles.contatoValue} style={{ fontStyle: 'normal' }}>
+                    Av. Paulista, 1159 – Loja 2<br />São Paulo – SP, 01311-200
+                  </address>
                 </div>
               </div>
 
@@ -227,7 +285,7 @@ export default function HomePage() {
           <div className={styles.mapWrapper}>
             <iframe
               src="https://maps.google.com/maps?q=Av.+Paulista+1159+Sao+Paulo+SP&output=embed"
-              title="Localização Del Mastro"
+              title="Localização Del Mastro — Av. Paulista, 1159, São Paulo"
               loading="lazy"
               allowFullScreen
             />
